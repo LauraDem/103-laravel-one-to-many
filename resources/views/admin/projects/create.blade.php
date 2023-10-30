@@ -39,6 +39,22 @@
         </div>
 
 
+        
+        <div class="col-12">
+            <label for="type_id" class="form-label">Categoria</label>
+            <select name="type_id" id="type_id" class="form-select">
+                <option value="">Nessun Tipo</option>
+                @foreach ($types as $type)
+                    <option value="{{$type->id}}">{{$type->label}}</option>
+                @endforeach
+
+
+
+            </select>
+      
+        </div>
+
+
 
         <div class="col-12">
             <label for="content" class="form-label">Contenuto</label>

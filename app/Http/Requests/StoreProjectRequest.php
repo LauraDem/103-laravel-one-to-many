@@ -27,12 +27,12 @@ class StoreProjectRequest extends FormRequest
         return [
             "name"=> [
                 "required",
-                "string", 
-                "unique:projects,id",
+                "string",
                 Rule::unique("projects"),
             ],
 
             "content"=> ["required","string"],
+            "type_id"=> [ "nullable", "exists:types,id"]
         ];
     }
 
@@ -41,11 +41,13 @@ class StoreProjectRequest extends FormRequest
         return [
             "name.required"=> "Il nome è obbligatorio",
             "name.string"=> "Il nome deve essere una stringa",
-            "name.unique"=> "Esiste già un progetto con questo nome",
+            
 
 
             "content.required"=> "Il contenuto è obbligatorio",
             "content.string"=> "Il contenuto deve essere una stringa",
+
+            "type_id.exists"=> "Il tipo inserito non è valido"
         ];
 }
 }

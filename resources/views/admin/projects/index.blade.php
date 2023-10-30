@@ -32,7 +32,7 @@
               <td>{{ $project->created_at }}</td>
               <td>{{ $project->updated_at }}</td>
               <td>
-                <a href="{{ route('admin.projects.show', $project) }}"><i class="fa-solid fa-arrow-up-right-from-square text-success"></i></a>
+                <a href="{{ route('admin.projects.show', $project) }}"><i class="fa-solid fa-arrow-up-right-from-square text-primary"></i></a>
               </td>
               <td>
                 <a href="{{ route('admin.projects.edit', $project) }}"><i class="fa-solid fa-pencil text-warning"></i></a>

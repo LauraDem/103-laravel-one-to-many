@@ -35,6 +35,18 @@
             <input type="text" name="name" id="name" class="form-control" value="{{ old('name') ?? $project->name }}" >
         </div>
 
+           
+        <div class="col-12">
+            <label for="type_id" class="form-label">Categoria</label>
+            <select name="type_id" id="type_id" class="form-select">
+                <option value="">Nessun Tipo</option>
+                @foreach ($types as $type)
+                    <option value="{{ $type->id }}" @if (old('type_id') ?? $project->type_id == $type->id) selected @endif> {{$type->label}}</option>
+                @endforeach
+            </select>     
+        </div>
+
+
         <div class="col-12">
             <label for="content" class="form-label">Contenuto</label>
             <textarea type="text" name="content" id="content" class="form-control" rows="5">{{ old('content') ?? $project->content }}</textarea>
