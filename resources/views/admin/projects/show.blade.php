@@ -14,6 +14,14 @@
     <div class="row g-5 mt-3">
         <div class="col-4">
             <p>
+                <strong>Categoria</strong>
+                {!! $project->getTypeBadge() !!}
+            </p>
+        </div>
+
+
+        <div class="col-4">
+            <p>
                 <strong>Slug</strong>
                 {{ $project->slug }}
             </p>
